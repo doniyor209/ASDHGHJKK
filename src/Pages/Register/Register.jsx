@@ -168,6 +168,7 @@ function Register() {
 
         <p className="footer-text">
           {t('Already have an account?')} <Link to="/login">{t('Login')}</Link>
+
         </p>
       </div>
     </div>
