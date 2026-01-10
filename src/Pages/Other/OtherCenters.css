@@ -1,0 +1,140 @@
+.other-centers {
+  padding: 80px 20px;
+  background: linear-gradient(
+    120deg,
+    #020024,
+    #0b2cff,
+    #0066ff,
+    #0b2cff,
+    #020024
+  );
+  background-size: 400% 400%;
+  animation: gradientFlow 12s ease-in-out infinite;
+  color: #fff;
+}
+
+@keyframes gradientFlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.centers-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.centers-title {
+  text-align: center;
+  font-size: 42px;
+  margin-bottom: 50px;
+}
+
+.centers-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+}
+
+/* Карточка */
+.center-card {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+/* Overlay для контраста кнопки */
+.center-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  transition: background 0.3s ease;
+  border-radius: 20px;
+  z-index: 1;
+}
+
+.center-card:hover::after {
+  background: rgba(0, 0, 0, 0.25);
+}
+
+/* Hover эффект карточки */
+.center-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+}
+
+/* Картинка как фон */
+.center-img {
+  width: 100%;
+  height: 140px;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin-bottom: 15px;
+  position: relative;
+  z-index: 2; /* над overlay */
+}
+
+/* Информация под картинкой */
+.center-info {
+  padding: 15px 20px 25px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  position: relative;
+  z-index: 2; /* над overlay */
+}
+
+.center-info h3 {
+  font-size: 20px;
+  margin: 0;
+  color: #fff;
+}
+
+/* Кнопка */
+.center-btn {
+  display: inline-block;
+  padding: 8px 18px;
+  background-color: #ffffff;
+  color: #0066ff;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  z-index: 2;
+}
+
+.center-btn:hover {
+  background-color: #0066ff;
+  color: #ffffff;
+  transform: translateY(-3px) scale(1.05);
+}
+
+/* 📱 Адаптация */
+@media (max-width: 768px) {
+  .centers-title {
+    font-size: 32px;
+  }
+
+  .center-img {
+    height: 120px;
+  }
+
+  .center-info h3 {
+    font-size: 16px;
+  }
+
+  .center-btn {
+    padding: 6px 14px;
+    font-size: 14px;
+  }
+}
