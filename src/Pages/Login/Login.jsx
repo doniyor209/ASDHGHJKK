@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useNavigate, useLocation } from 'react-router-dom';
+import { useNavigate, useLocation, Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import './Login.css';
 import ThemeToggle from '../../Components/ThemeToggle/ThemeToggle';
@@ -108,7 +108,7 @@ function Login() {
         </form>
 
         <p className="footer-text">
-          {t('No account?')} <a href="/register">{t('Register')}</a>
+          {t('No account?')} <Link to="/register">{t('Register')}</Link>
         </p>
       </div>
     </div>
